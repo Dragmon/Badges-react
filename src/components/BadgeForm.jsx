@@ -1,9 +1,14 @@
 import React from 'react';
 
 const handleChange = (e) => {
+    /*
     console.log({
         name: e.target.name,
         value: e.target.value,
+    });
+    */
+    this.setState({
+        firstName: e.target.value,
     });
 };
 

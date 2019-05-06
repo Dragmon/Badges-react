@@ -44,17 +44,16 @@ const BadgeNew = () => {
                 <BadgeNewHerosImg src={conflogo} alt="Logo" />
             </BadgeNewHeros>
             <BadgeConteiner>
-                <div>
-                    <Badge
-                        firstName="Carlos"
-                        lastName="Pérez"
-                        jobTitle="FrontEnd Enginner"
-                        twitter="dragmon"
-                    />
-                </div>
-                <div>
-                    <BadgeForm/>
-                </div>
+
+                <Badge
+                    firstName="Carlos"
+                    lastName="Pérez"
+                    jobTitle="FrontEnd Enginner"
+                    twitter="dragmon"
+                />
+
+                <BadgeForm/>
+
             </BadgeConteiner>
         </div>
     );
