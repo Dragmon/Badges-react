@@ -75,6 +75,7 @@ const BadgeConteiner = styled.div`
     border-radius: 8px 8px 8px 8px;
     overflow: hidden;
     height: 380px;
+    margin: 0 30px;
 `;
 
 const BadgeHeader = styled.div`

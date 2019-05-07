@@ -8,56 +8,55 @@ import BadgeForm from '../components/BadgeForm';
 
 /*
 import './styles/BadgeNew.css';
+*/
 
 class BadgeNew extends React.Component{
+
+    state = { 
+        form:{
+            firstName: '',
+            lastName: '',
+            email: '',
+            jobTitle: '',
+            twitter: '',
+        }
+    };
+
+    handleChange = e =>{
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value,
+            },
+        });
+    };
+
     render(){
         return(
             <div>
-                <Navbar/>
-                <div className="BadgeNew__hero">
-                    <img className="img-fluid" src={conflogo} alt="Logo"/>
-                </div>
+                <Navbar />
+                <BadgeNewHeros>
+                    <BadgeNewHerosImg src={conflogo} alt="Logo" />
+                </BadgeNewHeros>
+                <BadgeConteiner>
 
-                <div className="container">
-                    <div className="row">
-                        <div className="col">
-                            <Badge
-                                firstName="Carlos"
-                                lastName="Pérez"
-                                jobTitle="FrontEnd Enginner"
-                                twitter="dragmon"
-                            />
-                        </div>
-                    </div>
-                </div>
+                    <Badge
+                        firstName={this.state.form.firstName}
+                        lastName={this.state.form.lastName}
+                        twitter={this.state.form.twitter}
+                        jobTitle={this.state.form.jobTitle}
+                        email={this.state.form.email}
+                        avatarUrl="https://www.gravatar.com/avatar?d=identicon"
+                    />
+
+                    <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
+
+                </BadgeConteiner>
             </div>
         );
     }
 }
-*/
 
-const BadgeNew = () => {
-    return (
-        <div>
-            <Navbar />
-            <BadgeNewHeros>
-                <BadgeNewHerosImg src={conflogo} alt="Logo" />
-            </BadgeNewHeros>
-            <BadgeConteiner>
-
-                <Badge
-                    firstName="Carlos"
-                    lastName="Pérez"
-                    jobTitle="FrontEnd Enginner"
-                    twitter="dragmon"
-                />
-
-                <BadgeForm/>
-
-            </BadgeConteiner>
-        </div>
-    );
-};
 
 const BadgeNewHeros = styled.div`
     width: 100%;
