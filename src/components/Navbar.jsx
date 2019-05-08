@@ -29,7 +29,7 @@ const Navbar = () => {
                     <NavbarBrandPlatzi>Platzi</NavbarBrandPlatzi>
                     <NavbarBrandConf>Conf</NavbarBrandConf>
                 </NavbarBrand>
-            </NavbarBrandContent>                
+            </NavbarBrandContent>
         </NavbarContent>
     );
 }
