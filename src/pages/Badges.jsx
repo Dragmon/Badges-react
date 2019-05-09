@@ -36,9 +36,9 @@ class Badges extends React.Component{
                     </BadgeButton>
                 </BadgesContainer>
                 <div className="Badges__list">
-                    <BadgesContainer>
+                    <BadgesContainerList>
                         <BadgesList badges={this.state.data}/>
-                    </BadgesContainer>
+                    </BadgesContainerList>
                 </div>
             </div>
         )
@@ -64,8 +64,13 @@ const BadgesContainer = styled.div`
     width: 100%;
     max-width: 580px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 1rem;
 `;
+
+const BadgesContainerList = styled(BadgesContainer)`
+    background: #f5f5f5;
+`;
+
 const BadgesImgLogo = styled.img`
     margin-bottom: 2rem;
     width: 90%;
