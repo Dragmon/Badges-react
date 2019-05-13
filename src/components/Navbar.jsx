@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import logo from '../images/logo1.svg';
 import styled from 'styled-components';
 /*
@@ -24,7 +25,7 @@ const Navbar = () => {
     return (
         <NavbarContent>
             <NavbarBrandContent>
-                <NavbarBrand href="/">
+                <NavbarBrand to="/">
                     <NavbarBrandLogo src={logo} alt="logo conf" />
                     <NavbarBrandPlatzi>Platzi</NavbarBrandPlatzi>
                     <NavbarBrandConf>Conf</NavbarBrandConf>
@@ -45,7 +46,7 @@ const NavbarBrandContent = styled.div`
     padding: 0 10px;
 `;
 
-const NavbarBrand = styled.a`
+const NavbarBrand = styled(Link)`
     color: #ffffff;
     display: flex;
     align-items: center;

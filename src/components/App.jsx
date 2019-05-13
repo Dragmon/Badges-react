@@ -1,19 +1,34 @@
 import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from '../pages/Home';
+import Layout from '../components/Layout';
 import BadgeNew from '../pages/BadgeNew';
 import Badges from '../pages/Badges';
 import NotFound from '../pages/NotFound';
 
 function App(){
     return (
+        
         <Router>
-            <Switch>
-                <Route exact path="/" component={BadgeNew} />
-                <Route exact path="/badges" component={Badges}/>                
-                <Route component={NotFound} />
-            </Switch>
+            <GlobalStyle />
+            <Layout>
+                <Switch>
+                    <Route path="/" component={Home}/>
+                    <Route exact path="/badges" component={Badges}/>
+                    <Route exact path="/badges/new" component={BadgeNew} />
+                    <Route component={NotFound} />
+                </Switch>
+            </Layout>
         </Router>
     );
-}
+};
+
+const GlobalStyle = createGlobalStyle`
+    body{
+        margin: 0;
+        padding: 0;
+    }
+`;
 
 export default App;

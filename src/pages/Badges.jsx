@@ -1,6 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import styled from 'styled-components';
-import Navbar from '../components/Navbar';
 import BadgesList from '../components/BadgesList';
 import confLogo from '../images/logo.svg';
 import BackgroundHeader from '../images/stars.svg';
@@ -16,8 +16,7 @@ class Badges extends React.Component{
         };
         console.log('state : ', this.state);
         return(
-            <div>
-                <Navbar />
+            <React.Fragment>
                 <BadgesHeader>
                     <BadgesHero>
                         <BadgesContainer className="ContainerLogo">
@@ -30,7 +29,7 @@ class Badges extends React.Component{
                 </BadgesHeader>
                 <BadgesContainer>
                     <BadgeButton>
-                        <BadgeLinkButton href="/badges/new">
+                        <BadgeLinkButton to="/badges/new">
                             New Badge
                         </BadgeLinkButton>
                     </BadgeButton>
@@ -40,7 +39,7 @@ class Badges extends React.Component{
                         <BadgesList badges={this.state.data}/>
                     </BadgesContainerList>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
@@ -82,7 +81,7 @@ const BadgeButton = styled.div`
     margin-bottom: 1rem;
 `;
 
-const BadgeLinkButton = styled.a`
+const BadgeLinkButton = styled(Link)`
     background: #97ca3f;
     padding: 10px 30px;
     border-radius: 10px;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import conflogo from '../images/logo.svg';
 import Badge from '../components/Badge';
 import styled from 'styled-components';
@@ -33,8 +32,7 @@ class BadgeNew extends React.Component{
 
     render(){
         return(
-            <div>
-                <Navbar />
+            <React.Fragment>
                 <BadgeNewHeros>
                     <BadgeNewHerosImg src={conflogo} alt="Logo" />
                 </BadgeNewHeros>
@@ -52,7 +50,7 @@ class BadgeNew extends React.Component{
                     <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
 
                 </BadgeConteiner>
-            </div>
+            </React.Fragment>
         );
     }
 }
