@@ -14,7 +14,7 @@ function App(){
             <GlobalStyle />
             <Layout>
                 <Switch>
-                    <Route path="/" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route exact path="/badges" component={Badges}/>
                     <Route exact path="/badges/new" component={BadgeNew} />
                     <Route component={NotFound} />
