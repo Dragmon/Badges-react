@@ -10,11 +10,47 @@ const api = require('../api/list.json');
 //console.log('api : ', api);
 
 class Badges extends React.Component{
-    render(){
+    constructor(props) {
+        /* Inicialización de los estados */
+        super(props);        
+        console.log('1 Constuctor');
         this.state = {
-            data : api
+            data: []
         };
+    }
+    componentDidMount(){
+        /* Asignación de los valores de los estados */
+        console.log('3 componentDidMount');
+        
+        this.timeoutId = setTimeout(() =>{
+            this.setState({
+                data: api
+            })
+        }, 3000 )
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        /* Actualizacón de los componentes al modificar algun valor */
+        console.log('5 componentDidUpdate')
+        console.log({
+            prevProps: prevProps, 
+            prevState: prevState
+        });
+        console.log({
+            props: this.props, 
+            state: this.state
+        });
+    }
+
+    componentWillUnmount(){
+        /* Liberación de espacio en memoria o proceso inconcluos a salir del componente */
+        console.log('6 componentWillUnmount');
+        clearTimeout(this.timeoutId);
+    }
+    
+    render(){        
         console.log('state : ', this.state);
+        console.log('2 y 4 render');
         return(
             <React.Fragment>
                 <BadgesHeader>
