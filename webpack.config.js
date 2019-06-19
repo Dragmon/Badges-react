@@ -43,6 +43,10 @@ module.exports = {
         compress: true,
         port: 9000,
         historyApiFallback: true,
+        proxy:{
+            '/server': 'http://localhost:3000',
+            secure: false
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({
